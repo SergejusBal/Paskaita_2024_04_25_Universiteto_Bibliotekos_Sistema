@@ -25,7 +25,7 @@ public class Zurnalas extends Leidinys{
 
     @Override
     public void rodytiInformacija() {
-        System.out.println("Pavadinimas: " + this.getPavadinimas() + " ** Leidimo data" + this.localDate.toString());
+        System.out.println("Pavadinimas: " + this.getPavadinimas() + " ** Leidimo data: " + this.localDate.toString());
     }
     @Override
     public void nuskaitytiInformacija() {
@@ -35,9 +35,9 @@ public class Zurnalas extends Leidinys{
         System.out.println("Iveskite data formatu: mmmm-MM-dd");
         while(arTeisingai) {
             String data = Custom.nuskaitytiStringVerteCon();
-            arTeisingai = false;
             try {
                 this.localDate = LocalDate.parse(data, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                arTeisingai = false;
             } catch (DateTimeParseException e) {
                 System.out.println(BENDRA_KLAIDA);
             }
